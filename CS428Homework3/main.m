@@ -40,7 +40,7 @@ int main(int argc, const char * argv[])
     @autoreleasepool {
         
         // insert code here...
-        NSLog(@"Welcome to the World!");
+        NSLog(@"Welcome to the World!\n");
         
         NSFileHandle * input;
         NSString *inputString;
@@ -48,7 +48,7 @@ int main(int argc, const char * argv[])
         
         //main game loop
         do {
-            NSLog(@"waiting for command");
+            printf("waiting for command: ");
             if (getCommand(&input, &inputString)) {
                 
                 if ([inputString isEqualToString:@"exit"]) {
@@ -56,13 +56,13 @@ int main(int argc, const char * argv[])
                 } else {
                     
                     if ([inputString isNotEqualTo:@"help"]) {
-                        NSLog(@"Unrecognised input");
+                        printf("Unrecognised input\n");
                     }
                     
-                    NSLog(@"Available Commands:");
+                    printf("Available Commands:\n");
                     
                     for (NSString *availableCommand in menu()) {
-                        NSLog(@"%@", availableCommand);
+                        printf("\t%s\n", [availableCommand UTF8String]);
                     }
                     
                 }
@@ -73,7 +73,7 @@ int main(int argc, const char * argv[])
         } while(true);
             
         
-        NSLog(@"Exiting Game");
+        printf("Exiting Game. Good Bye.\n");
         
     }
     return 0;
