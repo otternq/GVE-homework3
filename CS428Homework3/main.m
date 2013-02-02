@@ -9,6 +9,31 @@
 #import <Foundation/Foundation.h>
 
 
+NSArray *menu() {
+    
+    return [NSArray arrayWithObjects: @"help", @"exit", nil];
+    
+}
+
+BOOL getCommand(NSFileHandle **input, NSString **command) {
+    
+    //get access to STDIN
+    *input = [NSFileHandle fileHandleWithStandardInput];
+    
+    NSData *inputData;
+    
+    //get what is in STDIN
+    inputData = [*input availableData];
+    
+    //place the STDIN data into a string
+    *command = [[NSString alloc] initWithData:inputData encoding:NSUTF8StringEncoding];
+    
+    //remove new line character
+    *command = [*command stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+
+    return TRUE;
+}
+
 int main(int argc, const char * argv[])
 {
 
@@ -17,27 +42,36 @@ int main(int argc, const char * argv[])
         // insert code here...
         NSLog(@"Welcome to the World!");
         
-        //get access to STDIN
-        NSFileHandle *input = [NSFileHandle fileHandleWithStandardInput];
-        NSData *inputData;
+        NSFileHandle * input;
         NSString *inputString;
         
-        NSString *exitString = @"exit";
         
+        //main game loop
         do {
-            //get what is in STDIN
-            inputData = [input availableData];
+            NSLog(@"waiting for command");
+            if (getCommand(&input, &inputString)) {
+                
+                if ([inputString isEqualToString:@"exit"]) {
+                    break;
+                } else {
+                    
+                    if ([inputString isNotEqualTo:@"help"]) {
+                        NSLog(@"Unrecognised input");
+                    }
+                    
+                    NSLog(@"Available Commands:");
+                    
+                    for (NSString *availableCommand in menu()) {
+                        NSLog(@"%@", availableCommand);
+                    }
+                    
+                }
+                
+            }
             
-            //place the STDIN data into a string
-            inputString = [[NSString alloc] initWithData:inputData encoding:NSUTF8StringEncoding];
             
-            //remove new line character
-            inputString = [inputString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+        } while(true);
             
-            //inputString = @"exit";
-            NSLog(@"%@", inputString);
-            
-        } while ([inputString isNotEqualTo:exitString]);
         
         NSLog(@"Exiting Game");
         
