@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'CS428Homework3' target in the 'CS428Homework3' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
