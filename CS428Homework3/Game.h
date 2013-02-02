@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Area.h"
 
 /**
  A class to represent a game
@@ -27,6 +28,9 @@
      Gets data from the input variable
      */
     NSData *inputData;
+    
+    Area * currentArea;
+    
 }
 
 -(id) init;
@@ -52,6 +56,12 @@
  @param command A common resource for the input
  */
 - (BOOL) splitCommands: (NSString **) command;
+
+- (NSString *) getIntro;
+
+- (void) loadArea: (NSString *) area;
+
+- (void) lookAround;
 
 
 @end
