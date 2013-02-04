@@ -111,7 +111,9 @@
 -(NSString *) getIntro {
     
     NSFileHandle *tempFile = [NSFileHandle fileHandleForReadingAtPath:@"/Users/otternq/Documents/AppDev/CS428Homework3/CS428Homework3/intro.json"];
+    
     NSData *tempData = [tempFile readDataToEndOfFile];
+    
     NSString *jsonString = [[NSString alloc] initWithData:tempData encoding:NSUTF8StringEncoding];
     
     SBJsonParser *jsonParser = [[SBJsonParser alloc] init];
@@ -141,10 +143,8 @@
     //parse the string into a dictionary
     NSDictionary *json = [jsonParser objectWithString:jsonString];
     
-    //retrieve a description from the dictionary
-    NSString *tempDescription = [json objectForKey:@"description"];
-    
-    self.currentArea = [[Area alloc] initWithDescription:tempDescription andWithObjects: [json objectForKey:@"objects"]];
+    //create a new area while retrieving the description and objects from the dictionary
+    self.currentArea = [[Area alloc] initWithDescription:[json objectForKey:@"description"] andWithObjects: [json objectForKey:@"objects"]];
     
     
     
