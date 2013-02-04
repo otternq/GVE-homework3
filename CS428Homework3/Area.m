@@ -9,23 +9,17 @@
 #import "Area.h"
 
 @implementation Area
+@synthesize description = _description;
+@synthesize objects = _objects;
 
 - (id) initWithDescription:(NSString *)tempDescription andWithObjects:(NSArray *)tempObj {
     if (self = [super init])
     {
-        description = tempDescription;
-        objects = tempObj;
+        self.description = tempDescription;
+        self.objects = tempObj;
     }
     
     return self;
-}
-
-- (NSString *) getDescription {
-    return description;
-}
-
-- (NSArray *) getObjects {
-    return objects;
 }
 
 @end

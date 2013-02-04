@@ -8,30 +8,31 @@
 
 #import <Foundation/Foundation.h>
 #import "Area.h"
+#import "Player.h"
 
 /**
  A class to represent a game
 */
-@interface Game : NSObject {
+@interface Game : NSObject
+
+@property Area *currentArea;
     
-    /**
-     The list of available commands
-     */
-    NSArray *menu;
+@property Player * player;
     
-    /**
-     The handler for STDIN
-     */
-    NSFileHandle *input;
+/**
+ The list of available commands
+ */
+@property NSArray *menu;
     
-    /**
-     Gets data from the input variable
-     */
-    NSData *inputData;
+/**
+ The handler for STDIN
+ */
+@property NSFileHandle *input;
     
-    Area * currentArea;
-    
-}
+/**
+ Gets data from the input variable
+ */
+@property NSData *inputData;
 
 -(id) init;
 
@@ -61,7 +62,6 @@
 
 - (void) loadArea: (NSString *) area;
 
-- (void) lookAround;
 
 
 @end

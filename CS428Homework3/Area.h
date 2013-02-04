@@ -8,13 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Area : NSObject {
-    NSString * description;
-    NSDictionary * objects;
-}
+@interface Area : NSObject
+@property NSString * description;
+@property NSArray * objects;
+
 
 - (id) initWithDescription: (NSString *) tempDescription andWithObjects: (NSArray *)tempObj;
-- (NSString *) getDescription;
-- (NSArray *) getObjects;
 
 @end

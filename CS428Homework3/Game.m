@@ -12,14 +12,21 @@
 
 @implementation Game
 
+@synthesize currentArea = _currentArea;
+
 - (id) init {
     self = [super init];
     
     if (self) {
-        menu = [NSArray arrayWithObjects: @"help", @"exit", @"look", nil];
+        self.player = [[Player alloc] init];
+        
+        self.menu = [NSArray arrayWithObjects: @"help", @"exit", @"look", @"inspect <object>", nil];
         
         //Get Access to STDIN
-        input = [NSFileHandle fileHandleWithStandardInput];
+        self.input = [NSFileHandle fileHandleWithStandardInput];
+        
+        //set the current area variable
+        self.currentArea = nil;
     }
     
     return self;
@@ -27,8 +34,10 @@
 
 -(void) gameLoop {
     
+    NSString * area = [self getIntro];
+    
     //load the game into and set the first area
-    [self loadArea:[self getIntro]];
+    [self loadArea:area];
     
     //the command given by the user
     NSString *inputString;
@@ -42,6 +51,8 @@
         //get the command from the user, stored to inputString
         [self getCommand:&inputString];
         
+        printf("\n");
+        
     } while( [self splitCommands: &inputString] );//execute the loop until the user types a command that exits
     
     
@@ -51,21 +62,21 @@
 
 -(NSArray *) getMenu {
     
-    return menu;
+    return self.menu;
     
 }
 
 -(BOOL) getCommand : (NSString **) command{
 
     //get what is in STDIN
-    inputData = [input availableData];
+    self.inputData = [self.input availableData];
     
     //place the STDIN data into a string
-    *command = [[NSString alloc] initWithData:inputData encoding:NSUTF8StringEncoding];
+    *command = [[NSString alloc] initWithData:self.inputData encoding:NSUTF8StringEncoding];
     
     //remove new line character
     *command = [*command stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-    
+
     return TRUE;
 }
 
@@ -76,12 +87,15 @@
         return FALSE;
         
     } else if ([*command isEqualToString:@"look"]) {
-        [self lookAround];
+        Area * tempArea = self.currentArea;
+        
+        [self.player lookAround:&tempArea];
+        
     } else if([*command isEqualToString:@"help"]) {
         
         printf("Available Commands:\n");
         
-        for ( NSString *availableCommand in menu ) {
+        for ( NSString *availableCommand in self.menu ) {
             printf("\t%s\n", [availableCommand UTF8String]);
         }
         
@@ -109,45 +123,33 @@
 }
 
 -(void) loadArea:(NSString *)area {
-    
+
+    //specify the file
     NSString *fileName = [NSString stringWithFormat: @"/Users/otternq/Documents/AppDev/CS428Homework3/CS428Homework3/%@.json", area];
     
+    //connect to the file
     NSFileHandle *tempFile = [NSFileHandle fileHandleForReadingAtPath:fileName];
+    
+    //get data from the file
     NSData *tempData = [tempFile readDataToEndOfFile];
+    
+    //access the data as a string
     NSString *jsonString = [[NSString alloc] initWithData:tempData encoding:NSUTF8StringEncoding];
     
     SBJsonParser *jsonParser = [[SBJsonParser alloc] init];
+    
+    //parse the string into a dictionary
     NSDictionary *json = [jsonParser objectWithString:jsonString];
     
+    //retrieve a description from the dictionary
     NSString *tempDescription = [json objectForKey:@"description"];
     
-    currentArea = [[Area alloc] initWithDescription:tempDescription andWithObjects: [json objectForKey:@"objects"]];
+    self.currentArea = [[Area alloc] initWithDescription:tempDescription andWithObjects: [json objectForKey:@"objects"]];
+    
     
     
 }
 
-- (void) lookAround {
-    
-    printf("%s\n\n", [[currentArea getDescription] UTF8String]);
-    
-    //are there objects in the area
-    if ([[currentArea getObjects] count] > 0) {
-        
-        printf("You see the following objects:\n");
-    
-        for (NSString * object in [currentArea getObjects]) {
-            printf("\t%s\n", [object UTF8String]);
-        }
-    } else {//there are no objects
-        
-        printf("There are no objects in the area");
-        
-    }
-    
-    printf("\n");
-    
-    
-}
 
 
 @end
