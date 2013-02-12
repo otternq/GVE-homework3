@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Game.h"
+#import "SBJson.h"
+
 
 
 int main(int argc, const char * argv[])
@@ -14,32 +17,9 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool {
         
-        // insert code here...
-        NSLog(@"Welcome to the World!");
+        Game *game = [[Game alloc] init];
         
-        //get access to STDIN
-        NSFileHandle *input = [NSFileHandle fileHandleWithStandardInput];
-        NSData *inputData;
-        NSString *inputString;
-        
-        NSString *exitString = @"exit";
-        
-        do {
-            //get what is in STDIN
-            inputData = [input availableData];
-            
-            //place the STDIN data into a string
-            inputString = [[NSString alloc] initWithData:inputData encoding:NSUTF8StringEncoding];
-            
-            //remove new line character
-            inputString = [inputString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
-            
-            //inputString = @"exit";
-            NSLog(@"%@", inputString);
-            
-        } while ([inputString isNotEqualTo:exitString]);
-        
-        NSLog(@"Exiting Game");
+        [game gameLoop];
         
     }
     return 0;
