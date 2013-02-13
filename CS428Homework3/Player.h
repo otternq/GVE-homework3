@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Area.h"
+#import "AreaObject.h"
 
 @interface Player : NSObject
 
@@ -16,7 +17,8 @@
 @property NSMutableSet * inventory;
 
 
-- (BOOL) addToInventory: (NSString *) item;
+- (BOOL) addToInventory: (AreaObject *) item;
 - (void) lookAround: (Area **) area;
+- (BOOL) inspectObject: (NSString *) objectName inArea:(Area **) area ;
 
 @end

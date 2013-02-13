@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D3A9B6616CA01FD00173912 /* AreaObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3A9B6516CA01FD00173912 /* AreaObject.m */; };
 		2DA0D8F516C07D2B00548880 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA0D8E216C07D2B00548880 /* SBJsonParser.m */; };
 		2DA0D8F616C07D2B00548880 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA0D8E416C07D2B00548880 /* SBJsonStreamParser.m */; };
 		2DA0D8F716C07D2B00548880 /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA0D8E616C07D2B00548880 /* SBJsonStreamParserAccumulator.m */; };
@@ -39,6 +40,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2D3A9B6416CA01FD00173912 /* AreaObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaObject.h; sourceTree = "<group>"; };
+		2D3A9B6516CA01FD00173912 /* AreaObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaObject.m; sourceTree = "<group>"; };
 		2DA0D8E016C07D2B00548880 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
 		2DA0D8E116C07D2B00548880 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
 		2DA0D8E216C07D2B00548880 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
@@ -155,6 +158,8 @@
 				2DFDE76F16BCF8CE005F5106 /* Area.m */,
 				2DFDE77116BD9ED5005F5106 /* Player.h */,
 				2DFDE77216BD9ED5005F5106 /* Player.m */,
+				2D3A9B6416CA01FD00173912 /* AreaObject.h */,
+				2D3A9B6516CA01FD00173912 /* AreaObject.m */,
 			);
 			path = CS428Homework3;
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 				2DA0D8FC16C07D2B00548880 /* SBJsonStreamWriterAccumulator.m in Sources */,
 				2DA0D8FD16C07D2B00548880 /* SBJsonStreamWriterState.m in Sources */,
 				2DA0D8FE16C07D2B00548880 /* SBJsonWriter.m in Sources */,
+				2D3A9B6616CA01FD00173912 /* AreaObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

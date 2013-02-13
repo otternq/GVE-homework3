@@ -87,6 +87,7 @@
         return FALSE;
         
     } else if ([*command isEqualToString:@"look"]) {
+        
         Area * tempArea = self.currentArea;
         
         [self.player lookAround:&tempArea];

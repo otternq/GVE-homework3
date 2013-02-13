@@ -1,8 +1,20 @@
 {
     "description": "You begin to focus better, and realize you are in a strange house",
     "objects": [
-        "Computer",
-        "Couch",
-        "Dog Bed"
+        {
+            "title": "Computer",
+            "Description": "A Green Dell Inspiron with a broken hinge",
+            "canTake": false
+        },
+        {
+            "title": "Couch",
+            "Description": "A Green Dell Inspiron with a broken hinge",
+            "canTake": false
+        },
+        {
+            "title": "Dog Bed",
+            "Description": "A Green Dell Inspiron with a broken hinge",
+            "canTake": false
+        }
     ]
 }

@@ -7,6 +7,7 @@
 //
 
 #import "Player.h"
+#import "AreaObject.h"
 
 @implementation Player
 @synthesize name = _name;
@@ -24,7 +25,7 @@
     return self;
 }
 
-- (BOOL) addToInventory:(NSString *)item {
+- (BOOL) addToInventory:(AreaObject *)item {
     
     if ([self.inventory count] + 1 <= self.maxInventoryCount) {
         [self.inventory addObject:item];
@@ -45,9 +46,10 @@
         printf("You see the following objects:\n");
         
         //print out each object
-        for (NSString * object in [*area objects]) {
-            printf("\t%s\n", [object UTF8String]);
+        for (AreaObject *object in [*area objects]) {
+            printf("\t%s\n", [[object title] UTF8String]);
         }
+        
     } else {//there are no objects
         
         printf("There are no objects in the area");
@@ -55,6 +57,39 @@
     }
     
     printf("\n");
+}
+
+- (BOOL) inspectObject: (NSString *) objectName inArea:(Area **)area {
+    
+    //are there objects in the area
+    if ([[*area objects] count] > 0) {//yes there are objects
+        
+        //iterate through the objects in the area and look for the requested one
+        for (AreaObject * obj in [*area objects]) {
+            
+            //is this the element you are looking for? 
+            if ( [[obj title] isEqualToString:objectName] == TRUE ) {
+                
+                printf("Object: %s\n", [[obj title] UTF8String]);
+                printf("\tDescription: %s\n", [[obj description] UTF8String]);
+                
+                if ([obj canTake] == 0) {
+                    printf("\tCan be picked up\n");
+                } else {
+                    printf("\tCannot be picked up\n");
+                }
+                
+                return TRUE;
+            }
+            
+        }
+        
+        return FALSE;
+        
+    } else {
+        return FALSE;
+    }
+    
 }
 
 @end
