@@ -10,9 +10,9 @@
 
 @interface Area : NSObject
 @property NSString * description;
-@property NSArray * objects;
+@property NSMutableSet * objects;
 
-
+- (id) initWithDescription: (NSString *) tempDescription;
 - (id) initWithDescription: (NSString *) tempDescription andWithObjects: (NSArray *)tempObj;
 
 @end
