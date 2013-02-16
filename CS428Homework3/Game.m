@@ -82,17 +82,17 @@
 
 -(BOOL) splitCommands: (NSString **)command {
     
-    if ([*command isEqualToString:@"exit"]) {
+    if ([*command isEqualToString:@"exit"]) {//the command is exit
         
         return FALSE;
         
-    } else if ([*command isEqualToString:@"look"]) {
+    } else if ([*command isEqualToString:@"look"]) {//the command is look
         
         Area * tempArea = self.currentArea;
         
         [self.player lookAround:&tempArea];
         
-    } else if([*command isEqualToString:@"help"]) {
+    } else if([*command isEqualToString:@"help"]) {//the command is help
         
         printf("Available Commands:\n");
         
@@ -100,7 +100,17 @@
             printf("\t%s\n", [availableCommand UTF8String]);
         }
         
-    } else {
+    } else if ([*command hasPrefix:@"inspect"]) {//the command starts with inspect
+        
+        NSRange stringRange = NSMakeRange(8, [*command length] - 8);
+        NSString *tempObject = [*command substringWithRange:stringRange];
+        
+        NSLog(@"Inspecting object %@", tempObject);
+        
+        Area * tempArea = self.currentArea;
+        [self.player inspectObject:tempObject inArea:&tempArea];
+        
+    } else {//unknown command
         
         printf("Unrecognised input\n");
         

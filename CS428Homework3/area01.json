@@ -3,17 +3,17 @@
     "objects": [
         {
             "title": "Computer",
-            "Description": "A Green Dell Inspiron with a broken hinge",
+            "description": "A Green Dell Inspiron with a broken hinge",
             "canTake": false
         },
         {
             "title": "Couch",
-            "Description": "A Green Dell Inspiron with a broken hinge",
+            "description": "A Green Dell Inspiron with a broken hinge",
             "canTake": false
         },
         {
             "title": "Dog Bed",
-            "Description": "A Green Dell Inspiron with a broken hinge",
+            "description": "A Green Dell Inspiron with a broken hinge",
             "canTake": false
         }
     ]

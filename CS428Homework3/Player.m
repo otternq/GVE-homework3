@@ -84,9 +84,14 @@
             
         }
         
+        printf("No object `%s` in Area\n", [objectName UTF8String]);
+        
         return FALSE;
         
     } else {
+        
+        printf("No objects in Area\n");
+        
         return FALSE;
     }
     
