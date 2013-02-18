@@ -48,11 +48,7 @@
                 
                 AreaObject * tempObject = tempObj;
                 
-                NSLog(@"tempObject is now: title=%s", [tempObject.title UTF8String]);
-                
                 [self.objects removeObjectAtIndex:i];
-                
-                NSLog(@"tempObject is now: title=%s after removal", [tempObject.title UTF8String]);
                 
                 return tempObject;
                 

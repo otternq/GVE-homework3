@@ -20,7 +20,7 @@
     if (self) {
         self.player = [[Player alloc] init];
         
-        self.menu = [NSArray arrayWithObjects: @"help", @"exit", @"look", @"inspect <object>", @"pick up <object>", nil];
+        self.menu = [NSArray arrayWithObjects: @"help", @"exit", @"look", @"inspect <object>", @"pick up <object>", @"list inventory", nil];
         
         //Get Access to STDIN
         self.input = [NSFileHandle fileHandleWithStandardInput];
@@ -123,11 +123,17 @@
         
         
         
+    } else if ( [*command isEqualToString:@"list inventory"] ) {
+        
+        [self.player showInventory];
+        
     } else {//unknown command
         
         printf("Unrecognised input\n");
         
     }
+    
+    printf("\n");
     
     return TRUE;
 }
