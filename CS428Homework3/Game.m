@@ -20,7 +20,7 @@
     if (self) {
         self.player = [[Player alloc] init];
         
-        self.menu = [NSArray arrayWithObjects: @"help", @"exit", @"look", @"inspect <object>", nil];
+        self.menu = [NSArray arrayWithObjects: @"help", @"exit", @"look", @"inspect <object>", @"pick up <object>", nil];
         
         //Get Access to STDIN
         self.input = [NSFileHandle fileHandleWithStandardInput];
@@ -109,6 +109,19 @@
         
         Area * tempArea = self.currentArea;
         [self.player inspectObject:tempObject inArea:&tempArea];
+        
+    } else if ( [*command hasPrefix:@"pick up"] ) {
+        
+        NSRange stringRange = NSMakeRange(8, [*command length] - 8);
+        NSString *tempObject = [*command substringWithRange:stringRange];
+        
+        AreaObject *pickupObj = [self.currentArea removeObjects:tempObject];
+        
+        if (pickupObj != NULL) {
+            [self.player addToInventory:pickupObj];
+        }
+        
+        
         
     } else {//unknown command
         

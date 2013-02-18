@@ -7,12 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AreaObject.h"
 
 @interface Area : NSObject
 @property NSString * description;
-@property NSMutableSet * objects;
+@property NSMutableArray * objects;
 
 - (id) initWithDescription: (NSString *) tempDescription;
 - (id) initWithDescription: (NSString *) tempDescription andWithObjects: (NSArray *)tempObj;
+
+- (AreaObject *) removeObjects: (NSString *) objectName;
 
 @end

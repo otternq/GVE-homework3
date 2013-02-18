@@ -8,12 +8,12 @@
         },
         {
             "title": "Couch",
-            "description": "A Green Dell Inspiron with a broken hinge",
+            "description": "A blue recliner couch",
             "canTake": false
         },
         {
             "title": "Dog Bed",
-            "description": "A Green Dell Inspiron with a broken hinge",
+            "description": "A tan with dog bed with brown stripes.",
             "canTake": false
         }
     ]

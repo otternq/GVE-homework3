@@ -35,6 +35,22 @@
     return FALSE;
 }
 
+- (void) showInventory {
+    
+    if ([self.inventory count] > 0) {
+        
+        printf("Your inventory contains:\n");
+        
+        for (AreaObject *tempObj in self.inventory) {
+            printf("\t%s\n", [tempObj.title UTF8String]);
+        }
+        
+    } else {
+        printf("Your inventory is empty");
+    }
+    
+}
+
 - (void) lookAround:(Area **)area {
 
     //print the area description
