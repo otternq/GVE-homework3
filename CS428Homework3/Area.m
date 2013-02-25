@@ -58,11 +58,17 @@
             
             if ( [tempObj.title isEqualToString:objectName] ) {//found the object
                 
-                AreaObject * tempObject = tempObj;
+                if (tempObj.canTake == TRUE) {
                 
-                [self.objects removeObjectAtIndex:i];
-                
-                return tempObject;
+                    AreaObject * tempObject = tempObj;
+                    
+                    [self.objects removeObjectAtIndex:i];
+                    
+                    return tempObject;
+                    
+                } else {
+                    return NULL;
+                }
                 
             }
             

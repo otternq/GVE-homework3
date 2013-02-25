@@ -125,6 +125,8 @@
         if (pickupObj != NULL) {
             [self.player addToInventory:pickupObj];
             printf("you picked up the %s\n", [tempObject UTF8String]);
+        } else {
+            printf("Unable to pick up %s", [tempObject UTF8String]);
         }
         
         
