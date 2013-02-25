@@ -20,7 +20,7 @@ Requirements and Goals
 ###Personal Goals
 
 - [x] Dynamically loaded stories
-- [ ] Choose from different stories without changing game code
+- [x] Choose from different stories without changing game code
 
 
 Stories
