@@ -115,7 +115,7 @@
         Area * tempArea = self.currentArea;
         [self.player inspectObject:tempObject inArea:&tempArea];
         
-    } else if ( [*command hasPrefix:@"pick up"] ) {
+    } else if ( [*command hasPrefix:@"pick up"] ) {//the command started with pick up
         
         NSRange stringRange = NSMakeRange(8, [*command length] - 8);
         NSString *tempObject = [*command substringWithRange:stringRange];
@@ -131,11 +131,11 @@
         
         
         
-    } else if ( [*command isEqualToString:@"list inventory"] ) {
+    } else if ( [*command isEqualToString:@"list inventory"] ) {//the player wants a list of their inventory
         
         [self.player showInventory];
         
-    } else if ( [*command hasPrefix:@"go to"] ) {
+    } else if ( [*command hasPrefix:@"go to"] ) {//the player wants to navigate to another area
         
         NSRange stringRange = NSMakeRange(6, [*command length] - 6);
         NSString *tempArea = [*command substringWithRange:stringRange];
@@ -152,10 +152,10 @@
             
         }
         
-    } else if ([*command isEqualToString:@"objectives"]) {
+    } else if ([*command isEqualToString:@"objectives"]) {//the player wants to know what the objective is
         
-        /*if ([self.objectives count] > 0) {
-            printf("There are the following objectives:");
+        if ([self.objectives count] > 0) {
+            printf("There are the following objectives:\n");
             
             for (NSString * obj in self.objectives) {
                 printf("\t%s\n", [obj UTF8String]);
@@ -163,7 +163,7 @@
             
         } else {
             printf("There are no objectives\n");
-        }*/
+        }
         
     } else {//unknown command
         
