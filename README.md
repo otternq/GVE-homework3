@@ -25,6 +25,24 @@ Requirements and Goals
 - [x] Dynamically loaded stories
 - [x] Choose from different stories without changing game code
 
+Running program in Xcode
+------
+Open the project in Xcode and in the upper left corner there is a run button. After the program begins executing it 
+will ask for the location of a directory containing a story.
+
+`Enter the location of the story: /path/to/story/directory/`
+
+Commands
+-------
+Available Commands:
+- help `lists this text`
+- exit `exits the game`
+- look `describes the area the player is currently in, objects in the area, and areas that the player can go to from this area`
+- inspect \<object\> `describes the specified object`
+- pick up \<object\> `will remove an object from an area and place it into the players inventory`
+- list inventory `lists the objects in the players inventory`
+- go to \<area\> `navigates the player to an attached area`
+- objectives `lists the objects that the player must add to their inventory to win the game`
 
 Stories
 ------
