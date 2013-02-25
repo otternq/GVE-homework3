@@ -17,7 +17,9 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool {
         
-        Game *game = [[Game alloc] init];
+        NSString *dir = @"/Users/otternq/Documents/AppDev/CS428Homework3/CS428Homework3";
+        
+        Game *game = [[Game alloc] initWithDir:dir];
         
         [game gameLoop];
         

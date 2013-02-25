@@ -73,6 +73,22 @@
     }
     
     printf("\n");
+    
+    if ([[*area otherArea] count] > 0) {
+        
+        printf("You can go to the following areas:\n");
+        
+        for (NSDictionary *areaDic in [*area otherArea]) {
+            
+            printf("\t%s\n",[[areaDic objectForKey:@"goto"] UTF8String]);
+            
+        }
+        
+    } else {
+        printf("There is nowhere else to go");
+    }
+    
+    printf("\n");
 }
 
 - (BOOL) inspectObject: (NSString *) objectName inArea:(Area **)area {

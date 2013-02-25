@@ -12,6 +12,7 @@
 @implementation Area
 @synthesize description = _description;
 @synthesize objects = _objects;
+@synthesize otherArea = _otherArea;
 
 - (id) initWithDescription: (NSString *)tempDescription {
     if (self = [super init])
@@ -34,6 +35,17 @@
     }
     
     return self;
+}
+
+- (id) initWithDescription:(NSString *)tempDescription andWithObjects:(NSArray *)tempObj andWithAreas:(NSMutableArray *)tempArea {
+    
+    if (self = [self initWithDescription: tempDescription andWithObjects:tempObj])
+    {
+        self.otherArea = tempArea;
+    }
+                
+    return self;
+    
 }
 
 - (AreaObject *) removeObjects:(NSString *)objectName {

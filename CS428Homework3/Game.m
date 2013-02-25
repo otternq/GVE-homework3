@@ -14,13 +14,16 @@
 
 @synthesize currentArea = _currentArea;
 
-- (id) init {
+- (id) initWithDir: (NSString *) dir {
     self = [super init];
     
     if (self) {
+        
+        self.dir = dir;
+        
         self.player = [[Player alloc] init];
         
-        self.menu = [NSArray arrayWithObjects: @"help", @"exit", @"look", @"inspect <object>", @"pick up <object>", @"list inventory", nil];
+        self.menu = [NSArray arrayWithObjects: @"help", @"exit", @"look", @"inspect <object>", @"pick up <object>", @"list inventory", @"go to <area>", nil];
         
         //Get Access to STDIN
         self.input = [NSFileHandle fileHandleWithStandardInput];
@@ -53,7 +56,7 @@
         
         printf("\n");
         
-    } while( [self splitCommands: &inputString] );//execute the loop until the user types a command that exits
+    } while( [self splitCommands: &inputString] && ![self checkWin] );//execute the loop until the user types a command that exits
     
     
     printf("Exiting Game. Good Bye.\n");
@@ -119,6 +122,7 @@
         
         if (pickupObj != NULL) {
             [self.player addToInventory:pickupObj];
+            printf("you picked up the %s\n", [tempObject UTF8String]);
         }
         
         
@@ -126,6 +130,23 @@
     } else if ( [*command isEqualToString:@"list inventory"] ) {
         
         [self.player showInventory];
+        
+    } else if ( [*command hasPrefix:@"go to"] ) {
+        
+        NSRange stringRange = NSMakeRange(6, [*command length] - 6);
+        NSString *tempArea = [*command substringWithRange:stringRange];
+        
+        for (NSDictionary *areaDic in [self.currentArea otherArea]) {
+            
+            if ( [tempArea isEqualToString:[areaDic objectForKey:@"goto"]] ) {
+                
+                [self loadArea:[areaDic objectForKey:@"fileName"]];
+                
+                printf("you are now in %s\n", [[areaDic objectForKey:@"goto"] UTF8String]);
+                
+            }
+            
+        }
         
     } else {//unknown command
         
@@ -157,7 +178,7 @@
 -(void) loadArea:(NSString *)area {
 
     //specify the file
-    NSString *fileName = [NSString stringWithFormat: @"/Users/otternq/Documents/AppDev/CS428Homework3/CS428Homework3/%@.json", area];
+    NSString *fileName = [NSString stringWithFormat: @"%@/%@.json", self.dir, area];
     
     //connect to the file
     NSFileHandle *tempFile = [NSFileHandle fileHandleForReadingAtPath:fileName];
@@ -174,10 +195,44 @@
     NSDictionary *json = [jsonParser objectWithString:jsonString];
     
     //create a new area while retrieving the description and objects from the dictionary
-    self.currentArea = [[Area alloc] initWithDescription:[json objectForKey:@"description"] andWithObjects: [json objectForKey:@"objects"]];
+    self.currentArea = [[Area alloc] initWithDescription:[json objectForKey:@"description"] andWithObjects: [json objectForKey:@"objects"] andWithAreas:[json objectForKey:@"attachedAreas"]];
     
     
     
+}
+
+- (BOOL) checkWin {
+    
+    NSMutableArray * objectives = [NSMutableArray arrayWithObjects: @"Toaster", @"Couch", nil];
+    
+    int count = 0;
+    
+    for (AreaObject * inventoryItem in [self.player inventory]) {
+        
+        for (NSString * objective in objectives) {
+            
+            if ([objective isEqualToString:[inventoryItem title]]) {
+                
+                count++;
+            }
+            
+        }
+        
+    }
+    
+    if ([objectives count] == count) {
+        
+        [self gameWon];
+        
+        return TRUE;
+    }
+    
+    return FALSE;
+    
+}
+
+- (void) gameWon {
+    printf("YOU have won the game!!\n\n");
 }
 
 

@@ -34,7 +34,9 @@
  */
 @property NSData *inputData;
 
--(id) init;
+@property NSString * dir;
+
+-(id) initWithDir: (NSString *)dir;
 
 /**
  Executes the game
@@ -61,6 +63,10 @@
 - (NSString *) getIntro;
 
 - (void) loadArea: (NSString *) area;
+
+- (BOOL) checkWin;
+
+- (void) gameWon;
 
 
 

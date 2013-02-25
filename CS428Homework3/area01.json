@@ -16,5 +16,17 @@
             "description": "A tan with dog bed with brown stripes.",
             "canTake": false
         }
+    ],
+    "attachedAreas": [
+        {
+            "goto": "the kitchen",
+            "fileName": "area02"
+        },
+        {
+            "goto": "the bathroom",
+            "fileName": "area03"
+
+        }
+    
     ]
 }
