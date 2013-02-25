@@ -42,6 +42,7 @@
 /* Begin PBXFileReference section */
 		2D3A9B6416CA01FD00173912 /* AreaObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaObject.h; sourceTree = "<group>"; };
 		2D3A9B6516CA01FD00173912 /* AreaObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaObject.m; sourceTree = "<group>"; };
+		2D7BABC216DB178C00F7DDCC /* area02.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = area02.json; sourceTree = "<group>"; };
 		2DA0D8E016C07D2B00548880 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
 		2DA0D8E116C07D2B00548880 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
 		2DA0D8E216C07D2B00548880 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
@@ -160,6 +161,7 @@
 				2DFDE77216BD9ED5005F5106 /* Player.m */,
 				2D3A9B6416CA01FD00173912 /* AreaObject.h */,
 				2D3A9B6516CA01FD00173912 /* AreaObject.m */,
+				2D7BABC216DB178C00F7DDCC /* area02.json */,
 			);
 			path = CS428Homework3;
 			sourceTree = "<group>";

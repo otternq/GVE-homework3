@@ -36,6 +36,8 @@
 
 @property NSString * dir;
 
+@property NSArray * objectives;
+
 -(id) initWithDir: (NSString *)dir;
 
 /**

@@ -23,13 +23,15 @@
         
         self.player = [[Player alloc] init];
         
-        self.menu = [NSArray arrayWithObjects: @"help", @"exit", @"look", @"inspect <object>", @"pick up <object>", @"list inventory", @"go to <area>", nil];
+        self.menu = [NSArray arrayWithObjects: @"help", @"exit", @"look", @"inspect <object>", @"pick up <object>", @"list inventory", @"go to <area>", @"objectives", nil];
         
         //Get Access to STDIN
         self.input = [NSFileHandle fileHandleWithStandardInput];
         
         //set the current area variable
         self.currentArea = nil;
+        
+        self.objectives = nil;
     }
     
     return self;
@@ -148,6 +150,19 @@
             
         }
         
+    } else if ([*command isEqualToString:@"objectives"]) {
+        
+        /*if ([self.objectives count] > 0) {
+            printf("There are the following objectives:");
+            
+            for (NSString * obj in self.objectives) {
+                printf("\t%s\n", [obj UTF8String]);
+            }
+            
+        } else {
+            printf("There are no objectives\n");
+        }*/
+        
     } else {//unknown command
         
         printf("Unrecognised input\n");
@@ -161,7 +176,9 @@
 
 -(NSString *) getIntro {
     
-    NSFileHandle *tempFile = [NSFileHandle fileHandleForReadingAtPath:@"/Users/otternq/Documents/AppDev/CS428Homework3/CS428Homework3/intro.json"];
+    NSString *path = [self.dir stringByAppendingString:@"/intro.json"];
+    
+    NSFileHandle *tempFile = [NSFileHandle fileHandleForReadingAtPath:path];
     
     NSData *tempData = [tempFile readDataToEndOfFile];
     
@@ -170,7 +187,21 @@
     SBJsonParser *jsonParser = [[SBJsonParser alloc] init];
     NSDictionary *json = [jsonParser objectWithString:jsonString];
     
+    printf("%s\n", [[json objectForKey:@"intro"] UTF8String]);
+    
+    self.objectives = [json objectForKey:@"objectives"];
+    
     printf("%s\n\n", [[json objectForKey:@"intro"] UTF8String]);
+    
+    printf("Your objectives are to find the following:\n");
+    
+    for (NSString * tempObjective in self.objectives) {
+        printf("\t%s\n", [tempObjective UTF8String]);
+    }
+    
+    printf("\n");
+    
+    
     return [json objectForKey:@"firstArea"];
     
 }
@@ -203,13 +234,13 @@
 
 - (BOOL) checkWin {
     
-    NSMutableArray * objectives = [NSMutableArray arrayWithObjects: @"Toaster", @"Couch", nil];
+    //NSMutableArray * objectives = [NSMutableArray arrayWithObjects: @"Toaster", @"Couch", nil];
     
     int count = 0;
     
     for (AreaObject * inventoryItem in [self.player inventory]) {
         
-        for (NSString * objective in objectives) {
+        for (NSString * objective in self.objectives) {
             
             if ([objective isEqualToString:[inventoryItem title]]) {
                 
@@ -220,7 +251,7 @@
         
     }
     
-    if ([objectives count] == count) {
+    if ([self.objectives count] == count) {
         
         [self gameWon];
         
