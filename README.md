@@ -25,6 +25,12 @@ Requirements and Goals
 - [x] Dynamically loaded stories
 - [x] Choose from different stories without changing game code
 
+Running program in Xcode
+------
+Open the project in Xcode and in the upper left corner there is a run button. After the program begins executing it 
+will ask for the location of a directory containing a story.
+
+`Enter the location of the story: /path/to/story/directory/`
 
 Stories
 ------
