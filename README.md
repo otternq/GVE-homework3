@@ -12,14 +12,14 @@ Requirements and Goals
 
 ###Assignment Requirements
 
-- [ ] Text Based Adventure
-- [ ] Navigate through different nodes (rooms, cities, etc)
-- [ ] Interact with objects
-- [ ] Have an inventory
+- [x] Text Based Adventure
+- [x] Navigate through different nodes (rooms, cities, etc)
+- [x] Interact with objects
+- [x] Have an inventory
 
 ###Personal Goals
 
-- [ ] Dynamically loaded stories
+- [x] Dynamically loaded stories
 - [ ] Choose from different stories without changing game code
 
 
