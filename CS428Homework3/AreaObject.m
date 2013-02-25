@@ -14,7 +14,7 @@
 @synthesize description = _description;
 @synthesize canTake = _canTake;
 
-- (id) initWithDescription:(NSString *)tempTitle andWithDescription:(NSString *)tempDescription andWithCanTake:(NSNumber *)tempCanTake {
+- (id) initWithDescription:(NSString *)tempTitle andWithDescription:(NSString *)tempDescription andWithCanTake:(BOOL *)tempCanTake {
     
     if (self = [super init])
     {
@@ -34,7 +34,9 @@
     if (self = [super init]) {
         self.title = [tempDictionary objectForKey:@"title"];
         self.description = [tempDictionary objectForKey:@"description"];
-        self.canTake = [tempDictionary objectForKey:@"canTake"];
+        
+        NSNumber * tempNum = [tempDictionary objectForKey:@"canTake"];
+        self.canTake = [tempNum boolValue];
     }
     
     return self;
