@@ -12,9 +12,9 @@
 
 @property NSString *title;
 @property NSString *description;
-@property NSNumber *canTake;
+@property BOOL canTake;
 
-- (id) initWithDescription: (NSString *) tempTitle andWithDescription: (NSString *)tempDescription andWithCanTake: (NSNumber *) tempCanTake;
+- (id) initWithDescription: (NSString *) tempTitle andWithDescription: (NSString *)tempDescription andWithCanTake: (BOOL *) tempCanTake;
 
 - (id) initFromDictionary: (NSDictionary *) tempDictionary;
 
