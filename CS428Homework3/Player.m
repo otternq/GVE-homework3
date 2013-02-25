@@ -35,6 +35,22 @@
     return FALSE;
 }
 
+- (void) showInventory {
+    
+    if ([self.inventory count] > 0) {
+        
+        printf("Your inventory contains:\n");
+        
+        for (AreaObject *tempObj in self.inventory) {
+            printf("\t%s\n", [tempObj.title UTF8String]);
+        }
+        
+    } else {
+        printf("Your inventory is empty");
+    }
+    
+}
+
 - (void) lookAround:(Area **)area {
 
     //print the area description
@@ -54,6 +70,22 @@
         
         printf("There are no objects in the area");
         
+    }
+    
+    printf("\n");
+    
+    if ([[*area otherArea] count] > 0) {
+        
+        printf("You can go to the following areas:\n");
+        
+        for (NSDictionary *areaDic in [*area otherArea]) {
+            
+            printf("\t%s\n",[[areaDic objectForKey:@"goto"] UTF8String]);
+            
+        }
+        
+    } else {
+        printf("There is nowhere else to go");
     }
     
     printf("\n");
@@ -84,9 +116,14 @@
             
         }
         
+        printf("No object `%s` in Area\n", [objectName UTF8String]);
+        
         return FALSE;
         
     } else {
+        
+        printf("No objects in Area\n");
+        
         return FALSE;
     }
     
