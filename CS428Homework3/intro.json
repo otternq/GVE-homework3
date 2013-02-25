@@ -1,4 +1,8 @@
 {
     "intro": "Welcome to the game!\n\nYou just woke up and its hard to see, so you blink your eyes a few times, and you look around\nType `look`",
-    "firstArea": "area01"
+    "firstArea": "area01",
+    "objectives": [
+        "Couch",
+        "Toaster"
+    ]
 }

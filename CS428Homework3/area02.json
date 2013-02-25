@@ -1,0 +1,20 @@
+{
+    "description": "The kitchen is a disaster!",
+    "objects": [
+        {
+            "title": "Toaster",
+            "description": "A two slice silver toaster",
+            "canTake": false
+        }
+    ],
+    "attachedAreas": [
+        {
+            "goto": "the living room",
+            "fileName": "area01"
+        },
+        {
+            "goto": "the outside",
+            "fileName": "area04"
+        }
+    ]
+}

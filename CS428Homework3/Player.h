@@ -18,7 +18,9 @@
 
 
 - (BOOL) addToInventory: (AreaObject *) item;
+- (void) showInventory;
+
 - (void) lookAround: (Area **) area;
-- (BOOL) inspectObject: (NSString *) objectName inArea:(Area **) area ;
+- (BOOL) inspectObject: (NSString *) objectName inArea:(Area **) area;
 
 @end
