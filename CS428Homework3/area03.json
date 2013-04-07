@@ -1,0 +1,26 @@
+{
+    "description": "You have entered the bathroom",
+    "objects": [
+        {
+            "title": "Tooth Paste",
+            "description": "Aquafresh tooth paste",
+            "canTake": true
+        },
+        {
+            "title": "Scope",
+            "description": "A small container of Scope mouth wash",
+            "canTake": true
+        },
+        {
+            "title": "Hair Gell",
+            "description": "Axe hair gell",
+            "canTake": false
+        }
+    ],
+    "attachedAreas": [
+        {
+            "goto": "the living room",
+            "fileName": "area01"
+        }
+    ]
+}

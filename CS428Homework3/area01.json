@@ -15,6 +15,11 @@
             "title": "Dog Bed",
             "description": "A tan with dog bed with brown stripes.",
             "canTake": false
+        },
+        {
+            "title": "Car Keys",
+            "description": "The keys to a dodge caravan",
+            "canTake": true
         }
     ],
     "attachedAreas": [
