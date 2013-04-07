@@ -110,3 +110,7 @@ Platform
 -------
 - <b>Language</b>: Objective-C
 - <b>Operating System</b>: OSX 10.8
+
+Testing
+------
+Testing will take place at [Travis CI](https://travis-ci.org/otternq/GVE-homework3)
