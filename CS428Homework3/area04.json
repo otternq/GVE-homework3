@@ -1,0 +1,21 @@
+{
+    "description": "You have entered the bathroom",
+    "objects": [
+        {
+        "title": "Rake",
+        "description": "A broken wooden rake",
+        "canTake": false
+        },
+        {
+        "title": "Left Shoe",
+        "description": "your missing left shoe",
+        "canTake": true
+        }
+    ],
+    "attachedAreas": [
+        {
+        "goto": "the living room",
+        "fileName": "area01"
+        }
+    ]
+}
