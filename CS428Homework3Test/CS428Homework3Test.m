@@ -1,14 +1,14 @@
 //
-//  CS428Homework3Tests.m
-//  CS428Homework3Tests
+//  CS428Homework3Test.m
+//  CS428Homework3Test
 //
 //  Created by Nicholas Otter on 4/7/13.
 //  Copyright (c) 2013 otternq. All rights reserved.
 //
 
-#import "CS428Homework3Tests.h"
+#import "CS428Homework3Test.h"
 
-@implementation CS428Homework3Tests
+@implementation CS428Homework3Test
 
 - (void)setUp
 {
@@ -26,7 +26,7 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in CS428Homework3Tests");
+    STFail(@"Unit tests are not implemented yet in CS428Homework3Test");
 }
 
 @end
