@@ -26,7 +26,8 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in CS428Homework3Test");
+    STAssertTrue(FALSE, @"I just want to test that the tests are running");
+    //STFail(@"Unit tests are not implemented yet in CS428Homework3Test");
 }
 
 @end
