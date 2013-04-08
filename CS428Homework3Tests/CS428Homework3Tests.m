@@ -1,0 +1,33 @@
+//
+//  CS428Homework3Tests.m
+//  CS428Homework3Tests
+//
+//  Created by Nicholas Otter on 4/7/13.
+//  Copyright (c) 2013 otternq. All rights reserved.
+//
+
+#import "CS428Homework3Tests.h"
+
+@implementation CS428Homework3Tests
+
+- (void)setUp
+{
+    [super setUp];
+    
+    // Set-up code here.
+}
+
+- (void)tearDown
+{
+    // Tear-down code here.
+    
+    [super tearDown];
+}
+
+- (void)testExample
+{
+    STAssertTrue(TRUE, @"Should Work");
+    STAssertTrue(FALSE, @"Should Fail");
+}
+
+@end
