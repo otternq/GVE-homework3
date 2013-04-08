@@ -435,7 +435,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CS428Homework3/CS428Homework3-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_AFTER_BUILD = NO;
+				TEST_AFTER_BUILD = YES;
 			};
 			name = Debug;
 		};
@@ -445,7 +445,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CS428Homework3/CS428Homework3-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_AFTER_BUILD = NO;
+				TEST_AFTER_BUILD = YES;
 			};
 			name = Release;
 		};
