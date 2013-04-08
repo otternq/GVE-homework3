@@ -21,10 +21,10 @@
 		2DA4211716BC91F600CF5180 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DA4211616BC91F600CF5180 /* Foundation.framework */; };
 		2DA4211A16BC91F600CF5180 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4211916BC91F600CF5180 /* main.m */; };
 		2DA4211E16BC91F600CF5180 /* CS428Homework3.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2DA4211D16BC91F600CF5180 /* CS428Homework3.1 */; };
-		2DED117117123CC50068357A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DED117017123CC50068357A /* SenTestingKit.framework */; };
-		2DED117317123CC50068357A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DED117217123CC50068357A /* Cocoa.framework */; };
-		2DED117D17123CC50068357A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DED117B17123CC50068357A /* InfoPlist.strings */; };
-		2DED118017123CC50068357A /* CS428Homework3Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DED117F17123CC50068357A /* CS428Homework3Test.m */; };
+		2DED44C71712425300D23AD0 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DED117017123CC50068357A /* SenTestingKit.framework */; };
+		2DED44C81712425300D23AD0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DED117217123CC50068357A /* Cocoa.framework */; };
+		2DED44CE1712425300D23AD0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2DED44CC1712425300D23AD0 /* InfoPlist.strings */; };
+		2DED44D11712425300D23AD0 /* CS428Homework3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DED44D01712425300D23AD0 /* CS428Homework3Tests.m */; };
 		2DFDE72C16BCCC86005F5106 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFDE72B16BCCC86005F5106 /* Game.m */; };
 		2DFDE77016BCF8CE005F5106 /* Area.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFDE76F16BCF8CE005F5106 /* Area.m */; };
 		2DFDE77316BD9ED5005F5106 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFDE77216BD9ED5005F5106 /* Player.m */; };
@@ -73,17 +73,17 @@
 		2DA4211916BC91F600CF5180 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2DA4211C16BC91F600CF5180 /* CS428Homework3-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CS428Homework3-Prefix.pch"; sourceTree = "<group>"; };
 		2DA4211D16BC91F600CF5180 /* CS428Homework3.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = CS428Homework3.1; sourceTree = "<group>"; };
-		2DED116F17123CC50068357A /* CS428Homework3Test.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CS428Homework3Test.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DED117017123CC50068357A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		2DED117217123CC50068357A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		2DED117517123CC50068357A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		2DED117617123CC50068357A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		2DED117717123CC50068357A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		2DED117A17123CC50068357A /* CS428Homework3Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CS428Homework3Test-Info.plist"; sourceTree = "<group>"; };
-		2DED117C17123CC50068357A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2DED117E17123CC50068357A /* CS428Homework3Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CS428Homework3Test.h; sourceTree = "<group>"; };
-		2DED117F17123CC50068357A /* CS428Homework3Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CS428Homework3Test.m; sourceTree = "<group>"; };
-		2DED118117123CC50068357A /* CS428Homework3Test-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CS428Homework3Test-Prefix.pch"; sourceTree = "<group>"; };
+		2DED44C61712425300D23AD0 /* CS428Homework3Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CS428Homework3Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DED44CB1712425300D23AD0 /* CS428Homework3Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CS428Homework3Tests-Info.plist"; sourceTree = "<group>"; };
+		2DED44CD1712425300D23AD0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2DED44CF1712425300D23AD0 /* CS428Homework3Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CS428Homework3Tests.h; sourceTree = "<group>"; };
+		2DED44D01712425300D23AD0 /* CS428Homework3Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CS428Homework3Tests.m; sourceTree = "<group>"; };
+		2DED44D21712425300D23AD0 /* CS428Homework3Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CS428Homework3Tests-Prefix.pch"; sourceTree = "<group>"; };
 		2DFDE72A16BCCC86005F5106 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		2DFDE72B16BCCC86005F5106 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		2DFDE74916BCE90C005F5106 /* intro.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = intro.json; sourceTree = "<group>"; };
@@ -103,12 +103,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2DED116B17123CC50068357A /* Frameworks */ = {
+		2DED44C21712425300D23AD0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DED117117123CC50068357A /* SenTestingKit.framework in Frameworks */,
-				2DED117317123CC50068357A /* Cocoa.framework in Frameworks */,
+				2DED44C71712425300D23AD0 /* SenTestingKit.framework in Frameworks */,
+				2DED44C81712425300D23AD0 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				2DA4211816BC91F600CF5180 /* CS428Homework3 */,
-				2DED117817123CC50068357A /* CS428Homework3Test */,
+				2DED44C91712425300D23AD0 /* CS428Homework3Tests */,
 				2DA4211516BC91F600CF5180 /* Frameworks */,
 				2DA4211416BC91F600CF5180 /* Products */,
 			);
@@ -157,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				2DA4211316BC91F600CF5180 /* CS428Homework3 */,
-				2DED116F17123CC50068357A /* CS428Homework3Test.octest */,
+				2DED44C61712425300D23AD0 /* CS428Homework3Tests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -213,22 +213,22 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		2DED117817123CC50068357A /* CS428Homework3Test */ = {
+		2DED44C91712425300D23AD0 /* CS428Homework3Tests */ = {
 			isa = PBXGroup;
 			children = (
-				2DED117E17123CC50068357A /* CS428Homework3Test.h */,
-				2DED117F17123CC50068357A /* CS428Homework3Test.m */,
-				2DED117917123CC50068357A /* Supporting Files */,
+				2DED44CF1712425300D23AD0 /* CS428Homework3Tests.h */,
+				2DED44D01712425300D23AD0 /* CS428Homework3Tests.m */,
+				2DED44CA1712425300D23AD0 /* Supporting Files */,
 			);
-			path = CS428Homework3Test;
+			path = CS428Homework3Tests;
 			sourceTree = "<group>";
 		};
-		2DED117917123CC50068357A /* Supporting Files */ = {
+		2DED44CA1712425300D23AD0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2DED117A17123CC50068357A /* CS428Homework3Test-Info.plist */,
-				2DED117B17123CC50068357A /* InfoPlist.strings */,
-				2DED118117123CC50068357A /* CS428Homework3Test-Prefix.pch */,
+				2DED44CB1712425300D23AD0 /* CS428Homework3Tests-Info.plist */,
+				2DED44CC1712425300D23AD0 /* InfoPlist.strings */,
+				2DED44D21712425300D23AD0 /* CS428Homework3Tests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -253,22 +253,22 @@
 			productReference = 2DA4211316BC91F600CF5180 /* CS428Homework3 */;
 			productType = "com.apple.product-type.tool";
 		};
-		2DED116E17123CC50068357A /* CS428Homework3Test */ = {
+		2DED44C51712425300D23AD0 /* CS428Homework3Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2DED118217123CC50068357A /* Build configuration list for PBXNativeTarget "CS428Homework3Test" */;
+			buildConfigurationList = 2DED44D31712425300D23AD0 /* Build configuration list for PBXNativeTarget "CS428Homework3Tests" */;
 			buildPhases = (
-				2DED116A17123CC50068357A /* Sources */,
-				2DED116B17123CC50068357A /* Frameworks */,
-				2DED116C17123CC50068357A /* Resources */,
-				2DED116D17123CC50068357A /* ShellScript */,
+				2DED44C11712425300D23AD0 /* Sources */,
+				2DED44C21712425300D23AD0 /* Frameworks */,
+				2DED44C31712425300D23AD0 /* Resources */,
+				2DED44C41712425300D23AD0 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = CS428Homework3Test;
-			productName = CS428Homework3Test;
-			productReference = 2DED116F17123CC50068357A /* CS428Homework3Test.octest */;
+			name = CS428Homework3Tests;
+			productName = CS428Homework3Tests;
+			productReference = 2DED44C61712425300D23AD0 /* CS428Homework3Tests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -293,24 +293,24 @@
 			projectRoot = "";
 			targets = (
 				2DA4211216BC91F600CF5180 /* CS428Homework3 */,
-				2DED116E17123CC50068357A /* CS428Homework3Test */,
+				2DED44C51712425300D23AD0 /* CS428Homework3Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2DED116C17123CC50068357A /* Resources */ = {
+		2DED44C31712425300D23AD0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DED117D17123CC50068357A /* InfoPlist.strings in Resources */,
+				2DED44CE1712425300D23AD0 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2DED116D17123CC50068357A /* ShellScript */ = {
+		2DED44C41712425300D23AD0 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -348,21 +348,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2DED116A17123CC50068357A /* Sources */ = {
+		2DED44C11712425300D23AD0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DED118017123CC50068357A /* CS428Homework3Test.m in Sources */,
+				2DED44D11712425300D23AD0 /* CS428Homework3Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2DED117B17123CC50068357A /* InfoPlist.strings */ = {
+		2DED44CC1712425300D23AD0 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2DED117C17123CC50068357A /* en */,
+				2DED44CD1712425300D23AD0 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -449,27 +449,27 @@
 			};
 			name = Release;
 		};
-		2DED118317123CC50068357A /* Debug */ = {
+		2DED44D41712425300D23AD0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CS428Homework3Test/CS428Homework3Test-Prefix.pch";
-				INFOPLIST_FILE = "CS428Homework3Test/CS428Homework3Test-Info.plist";
+				GCC_PREFIX_HEADER = "CS428Homework3Tests/CS428Homework3Tests-Prefix.pch";
+				INFOPLIST_FILE = "CS428Homework3Tests/CS428Homework3Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
-		2DED118417123CC50068357A /* Release */ = {
+		2DED44D51712425300D23AD0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CS428Homework3Test/CS428Homework3Test-Prefix.pch";
-				INFOPLIST_FILE = "CS428Homework3Test/CS428Homework3Test-Info.plist";
+				GCC_PREFIX_HEADER = "CS428Homework3Tests/CS428Homework3Tests-Prefix.pch";
+				INFOPLIST_FILE = "CS428Homework3Tests/CS428Homework3Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -496,11 +496,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2DED118217123CC50068357A /* Build configuration list for PBXNativeTarget "CS428Homework3Test" */ = {
+		2DED44D31712425300D23AD0 /* Build configuration list for PBXNativeTarget "CS428Homework3Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2DED118317123CC50068357A /* Debug */,
-				2DED118417123CC50068357A /* Release */,
+				2DED44D41712425300D23AD0 /* Debug */,
+				2DED44D51712425300D23AD0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
