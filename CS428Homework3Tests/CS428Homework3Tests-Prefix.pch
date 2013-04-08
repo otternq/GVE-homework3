@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'CS428Homework3Tests' target in the 'CS428Homework3Tests' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
